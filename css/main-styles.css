@@ -158,3 +158,76 @@ footer {
   margin-top: auto;
   font-size: 0.82rem;
 }
+
+/* ---------- Botão Editar ---------- */
+.btn-editar {
+  background: none;
+  border: 1px solid #0d6efd44;
+  color: #0d6efd;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 1rem;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.btn-editar:hover {
+  background-color: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+  transform: scale(1.12);
+}
+
+/* ---------- Botão Excluir ---------- */
+.btn-excluir {
+  background: none;
+  border: 1px solid #e5091433;
+  color: var(--accent);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 1rem;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.btn-excluir:hover {
+  background-color: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: scale(1.12);
+}
+
+/* Coluna de ações — espaço mínimo, botões lado a lado */
+.acoes-col {
+  white-space: nowrap;
+  width: 90px;
+}
+
+.acoes-col .btn-editar,
+.acoes-col .btn-excluir {
+  margin: 0 2px;
+}
+
+/* ---------- Modal — cabeçalho escuro igual à navbar ---------- */
+.modal-header {
+  background-color: var(--dark);
+  color: #fff;
+  border-bottom: 3px solid var(--accent);
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+/* Link dentro do alerta de dependência */
+#aviso-dependencia a {
+  color: #664d03;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+#aviso-dependencia a:hover {
+  color: #000;
+}

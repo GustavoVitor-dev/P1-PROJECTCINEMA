@@ -35,6 +35,7 @@
 
     <div class="row g-4">
 
+      <!-- Formulário de venda -->
       <div class="col-lg-5">
         <div class="card">
           <div class="card-header">Nova Venda</div>
@@ -76,6 +77,8 @@
                 </select>
               </div>
 
+              <div id="aviso-dependencia" class="alert alert-warning" style="display:none;"></div>
+
               <button type="submit" class="btn btn-cinema w-100">Confirmar Venda</button>
 
               <div id="feedback" class="feedback-alert"></div>
@@ -85,6 +88,7 @@
         </div>
       </div>
 
+      <!-- Listagem -->
       <div class="col-lg-7">
         <div class="card">
           <div class="card-header">Ingressos Vendidos</div>
@@ -98,6 +102,7 @@
                     <th>Filme</th>
                     <th>Assento</th>
                     <th>Pagamento</th>
+                    <th class="text-center">Ações</th>
                   </tr>
                 </thead>
                 <tbody id="lista-ingressos"></tbody>
@@ -107,6 +112,61 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ===== Modal de Edição ===== -->
+  <div class="modal fade" id="modal-editar-ingresso" tabindex="-1" aria-labelledby="modal-ingresso-titulo" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-ingresso-titulo">✏️ Editar Ingresso</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form-editar-ingresso" novalidate>
+
+            <div class="mb-3">
+              <label for="edit-sessao" class="form-label">Sessão</label>
+              <select id="edit-sessao" class="form-select" required></select>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="edit-nomeCliente" class="form-label">Nome do Cliente</label>
+                <input type="text" id="edit-nomeCliente" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label for="edit-cpf" class="form-label">CPF</label>
+                <input type="text" id="edit-cpf" class="form-control" maxlength="14" required>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="edit-assento" class="form-label">Assento</label>
+                <input type="text" id="edit-assento" class="form-control" maxlength="5" required>
+              </div>
+              <div class="col-md-6">
+                <label for="edit-tipoPagamento" class="form-label">Tipo de Pagamento</label>
+                <select id="edit-tipoPagamento" class="form-select" required>
+                  <option value="Cartão">Cartão</option>
+                  <option value="Pix">Pix</option>
+                  <option value="Dinheiro">Dinheiro</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="modal-feedback" class="alert" style="display:none;"></div>
+
+            <div class="d-flex gap-2 justify-content-end">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-cinema">💾 Salvar Alterações</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 

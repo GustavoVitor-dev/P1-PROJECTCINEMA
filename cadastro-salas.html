@@ -35,6 +35,7 @@
 
     <div class="row g-4">
 
+      <!-- Formulário de cadastro -->
       <div class="col-lg-4">
         <div class="card">
           <div class="card-header">Nova Sala</div>
@@ -72,6 +73,7 @@
         </div>
       </div>
 
+      <!-- Listagem -->
       <div class="col-lg-8">
         <div class="card">
           <div class="card-header">Salas Cadastradas</div>
@@ -83,6 +85,7 @@
                     <th>Nome</th>
                     <th>Capacidade</th>
                     <th>Tipo</th>
+                    <th class="text-center">Ações</th>
                   </tr>
                 </thead>
                 <tbody id="lista-salas"></tbody>
@@ -92,6 +95,50 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ===== Modal de Edição ===== -->
+  <div class="modal fade" id="modal-editar-sala" tabindex="-1" aria-labelledby="modal-sala-titulo" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-sala-titulo">✏️ Editar Sala</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form-editar-sala" novalidate>
+
+            <div class="mb-3">
+              <label for="edit-nome" class="form-label">Nome da Sala</label>
+              <input type="text" id="edit-nome" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="edit-capacidade" class="form-label">Capacidade (lugares)</label>
+              <input type="number" id="edit-capacidade" class="form-control" min="1" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="edit-tipo" class="form-label">Tipo</label>
+              <select id="edit-tipo" class="form-select" required>
+                <option value="">Selecione</option>
+                <option value="2D">2D</option>
+                <option value="3D">3D</option>
+                <option value="IMAX">IMAX</option>
+              </select>
+            </div>
+
+            <div id="modal-feedback" class="alert" style="display:none;"></div>
+
+            <div class="d-flex gap-2 justify-content-end">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-cinema">💾 Salvar Alterações</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 

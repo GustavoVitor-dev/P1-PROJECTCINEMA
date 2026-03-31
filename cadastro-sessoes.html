@@ -35,6 +35,7 @@
 
     <div class="row g-4">
 
+      <!-- Formulário de cadastro -->
       <div class="col-lg-5">
         <div class="card">
           <div class="card-header">Nova Sessão</div>
@@ -83,6 +84,8 @@
                 </select>
               </div>
 
+              <div id="aviso-dependencia" class="alert alert-warning" style="display:none;"></div>
+
               <button type="submit" class="btn btn-cinema w-100">Salvar Sessão</button>
 
               <div id="feedback" class="feedback-alert"></div>
@@ -92,6 +95,7 @@
         </div>
       </div>
 
+      <!-- Listagem -->
       <div class="col-lg-7">
         <div class="card">
           <div class="card-header">Sessões Cadastradas</div>
@@ -105,6 +109,7 @@
                     <th>Data / Hora</th>
                     <th>Preço</th>
                     <th>Sessão</th>
+                    <th class="text-center">Ações</th>
                   </tr>
                 </thead>
                 <tbody id="lista-sessoes"></tbody>
@@ -114,6 +119,67 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ===== Modal de Edição ===== -->
+  <div class="modal fade" id="modal-editar-sessao" tabindex="-1" aria-labelledby="modal-sessao-titulo" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-sessao-titulo">✏️ Editar Sessão</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form-editar-sessao" novalidate>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="edit-filme" class="form-label">Filme</label>
+                <select id="edit-filme" class="form-select" required></select>
+              </div>
+              <div class="col-md-6">
+                <label for="edit-sala" class="form-label">Sala</label>
+                <select id="edit-sala" class="form-select" required></select>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="edit-dataHora" class="form-label">Data e Hora</label>
+              <input type="datetime-local" id="edit-dataHora" class="form-control" required>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-4">
+                <label for="edit-preco" class="form-label">Preço (R$)</label>
+                <input type="number" id="edit-preco" class="form-control" min="0" step="0.01" required>
+              </div>
+              <div class="col-md-4">
+                <label for="edit-idioma" class="form-label">Idioma</label>
+                <select id="edit-idioma" class="form-select" required>
+                  <option value="Dublado">Dublado</option>
+                  <option value="Legendado">Legendado</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="edit-formato" class="form-label">Formato</label>
+                <select id="edit-formato" class="form-select" required>
+                  <option value="2D">2D</option>
+                  <option value="3D">3D</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="modal-feedback" class="alert" style="display:none;"></div>
+
+            <div class="d-flex gap-2 justify-content-end">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-cinema">💾 Salvar Alterações</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 

@@ -36,7 +36,7 @@
 
     <div class="row g-4">
 
-      <!-- Formulário -->
+      <!-- Formulário de cadastro -->
       <div class="col-lg-5">
         <div class="card">
           <div class="card-header">Novo Filme</div>
@@ -53,18 +53,10 @@
                 <label for="genero" class="form-label">Gênero</label>
                 <select id="genero" class="form-select" required>
                   <option value="">Selecione</option>
-                  <option>Ação</option>
-                  <option>Aventura</option>
-                  <option>Animação</option>
-                  <option>Comédia</option>
-                  <option>Drama</option>
-                  <option>Ficção Científica</option>
-                  <option>Horror</option>
-                  <option>Romance</option>
-                  <option>Suspense</option>
-                  <option>Thriller</option>
-                  <option>Documentário</option>
-                  <option>Outros</option>
+                  <option>Ação</option><option>Aventura</option><option>Animação</option>
+                  <option>Comédia</option><option>Drama</option><option>Ficção Científica</option>
+                  <option>Horror</option><option>Romance</option><option>Suspense</option>
+                  <option>Thriller</option><option>Documentário</option><option>Outros</option>
                 </select>
               </div>
 
@@ -122,6 +114,7 @@
                     <th>Class.</th>
                     <th>Duração</th>
                     <th>Estreia</th>
+                    <th class="text-center">Ações</th>
                   </tr>
                 </thead>
                 <tbody id="lista-filmes"></tbody>
@@ -131,6 +124,76 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ===== Modal de Edição ===== -->
+  <div class="modal fade" id="modal-editar-filme" tabindex="-1" aria-labelledby="modal-filme-titulo" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-filme-titulo">✏️ Editar Filme</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form-editar-filme" novalidate>
+
+            <div class="mb-3">
+              <label for="edit-titulo" class="form-label">Título</label>
+              <input type="text" id="edit-titulo" class="form-control" required>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="edit-genero" class="form-label">Gênero</label>
+                <select id="edit-genero" class="form-select" required>
+                  <option value="">Selecione</option>
+                  <option>Ação</option><option>Aventura</option><option>Animação</option>
+                  <option>Comédia</option><option>Drama</option><option>Ficção Científica</option>
+                  <option>Horror</option><option>Romance</option><option>Suspense</option>
+                  <option>Thriller</option><option>Documentário</option><option>Outros</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="edit-classificacao" class="form-label">Classificação Indicativa</label>
+                <select id="edit-classificacao" class="form-select" required>
+                  <option value="">Selecione</option>
+                  <option value="L">L — Livre</option>
+                  <option value="10">10 anos</option>
+                  <option value="12">12 anos</option>
+                  <option value="14">14 anos</option>
+                  <option value="16">16 anos</option>
+                  <option value="18">18 anos</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="edit-descricao" class="form-label">Descrição</label>
+              <textarea id="edit-descricao" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="edit-duracao" class="form-label">Duração (min)</label>
+                <input type="number" id="edit-duracao" class="form-control" min="1" required>
+              </div>
+              <div class="col-md-6">
+                <label for="edit-estreia" class="form-label">Data de Estreia</label>
+                <input type="date" id="edit-estreia" class="form-control" required>
+              </div>
+            </div>
+
+            <div id="modal-feedback" class="alert" style="display:none;"></div>
+
+            <div class="d-flex gap-2 justify-content-end">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-cinema">💾 Salvar Alterações</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 
