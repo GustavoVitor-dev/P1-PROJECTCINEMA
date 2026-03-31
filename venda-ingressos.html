@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venda de Ingressos · CineSystem</title>
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/main-styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🎬 CineSystem</a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro-filmes.html">Filmes</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro-salas.html">Salas</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro-sessoes.html">Sessões</a></li>
+          <li class="nav-item"><a class="nav-link active" href="venda-ingressos.html">Ingressos</a></li>
+          <li class="nav-item"><a class="nav-link" href="sessoes.html">Programação</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <h4 class="mb-4 fw-bold">🎟️ Venda de Ingressos</h4>
+
+    <div class="row g-4">
+
+      <div class="col-lg-5">
+        <div class="card">
+          <div class="card-header">Nova Venda</div>
+          <div class="card-body">
+            <form id="form-venda" novalidate>
+
+              <div class="mb-3">
+                <label for="sessao" class="form-label">Sessão</label>
+                <select id="sessao" class="form-select" required>
+                  <option value="">Carregando...</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="nomeCliente" class="form-label">Nome do Cliente</label>
+                <input type="text" id="nomeCliente" class="form-control"
+                       placeholder="Nome completo" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" id="cpf" class="form-control"
+                       placeholder="000.000.000-00" maxlength="14" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="assento" class="form-label">Assento</label>
+                <input type="text" id="assento" class="form-control"
+                       placeholder="Ex: A10" maxlength="5" required>
+                <div class="form-text">Letra da fileira + número (ex: B7)</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="tipoPagamento" class="form-label">Tipo de Pagamento</label>
+                <select id="tipoPagamento" class="form-select" required>
+                  <option value="Cartão">Cartão</option>
+                  <option value="Pix">Pix</option>
+                  <option value="Dinheiro">Dinheiro</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-cinema w-100">Confirmar Venda</button>
+
+              <div id="feedback" class="feedback-alert"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="card">
+          <div class="card-header">Ingressos Vendidos</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover mb-0">
+                <thead>
+                  <tr>
+                    <th>Cliente</th>
+                    <th>CPF</th>
+                    <th>Filme</th>
+                    <th>Assento</th>
+                    <th>Pagamento</th>
+                  </tr>
+                </thead>
+                <tbody id="lista-ingressos"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">CineSystem &copy; 2025</div>
+  </footer>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/venda-ingressos.js"></script>
+
+</body>
+</html>

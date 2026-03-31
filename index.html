@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineSystem</title>
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/main-styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== Navbar fixa (repetida em todas as páginas) ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🎬 CineSystem</a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro-filmes.html">Filmes</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro-salas.html">Salas</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro-sessoes.html">Sessões</a></li>
+          <li class="nav-item"><a class="nav-link" href="venda-ingressos.html">Ingressos</a></li>
+          <li class="nav-item"><a class="nav-link" href="sessoes.html">Programação</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero text-center">
+    <div class="container">
+      <h1>CineSystem</h1>
+      <p class="lead">Sistema de controle de cinema · Filmes, Salas, Sessões e Ingressos</p>
+    </div>
+  </section>
+
+  <!-- ===== Cards de acesso rápido ===== -->
+  <div class="container pb-5">
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <a href="cadastro-filmes.html" class="nav-card card p-4 text-center d-block">
+          <span class="icon">🎞️</span>
+          <div class="fw-semibold">Filmes</div>
+          <div class="text-muted" style="font-size:0.78rem;">Cadastrar</div>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <a href="cadastro-salas.html" class="nav-card card p-4 text-center d-block">
+          <span class="icon">🏛️</span>
+          <div class="fw-semibold">Salas</div>
+          <div class="text-muted" style="font-size:0.78rem;">Cadastrar</div>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <a href="cadastro-sessoes.html" class="nav-card card p-4 text-center d-block">
+          <span class="icon">📅</span>
+          <div class="fw-semibold">Sessões</div>
+          <div class="text-muted" style="font-size:0.78rem;">Cadastrar</div>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <a href="venda-ingressos.html" class="nav-card card p-4 text-center d-block">
+          <span class="icon">🎟️</span>
+          <div class="fw-semibold">Ingressos</div>
+          <div class="text-muted" style="font-size:0.78rem;">Vender</div>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <a href="sessoes.html" class="nav-card card p-4 text-center d-block">
+          <span class="icon">🎬</span>
+          <div class="fw-semibold">Programação</div>
+          <div class="text-muted" style="font-size:0.78rem;">Ver sessões</div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">CineSystem &copy; 2025 — Sistema de Controle de Cinema</div>
+  </footer>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/index.js"></script>
+
+</body>
+</html>
